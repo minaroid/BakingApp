@@ -1,13 +1,13 @@
 # BakingApp
 Baking Application for making delicious recipes.
 
-#Features:
+# Features:
 * Share Ingredients of a specific cake.
 * Home Screen Widget.
 * Watch the Recipes on Video Player.
 * Supports Multi-Screen sizes.
 
-#Libraries:
+# Libraries:
 * Android Support Libraries.
 * Espresso Test Library.
 * ButterKnife.
