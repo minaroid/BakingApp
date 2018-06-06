@@ -1,0 +1,31 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+
+    <style name="homeListCakeText" parent="TextAppearance.AppCompat">
+        <item name="android:layout_gravity">center</item>
+        <item name="android:fontFamily">@font/montserrat</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:padding">@dimen/cakes_list_text_padding</item>
+        <item name="android:textSize">@dimen/cakes_list_text_title_size</item>
+        <item name="android:layout_marginBottom">@dimen/cakes_list_margin_bottom_text</item>
+    </style>
+
+    <style name="homeListCakeTextServing" parent="TextAppearance.AppCompat">
+        <item name="android:layout_gravity">center</item>
+        <item name="android:fontFamily">@font/nunito_sans_light_italic</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:padding">@dimen/cakes_list_text_padding</item>
+        <item name="android:textSize">@dimen/cakes_list_text_serving_size</item>
+        <item name="android:layout_marginBottom">@dimen/cakes_list_margin_bottom_text</item>
+    </style>
+</resources>

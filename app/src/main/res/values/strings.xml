@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">BakingApp</string>
+    <string name="cake_name">Cake Title</string>
+    <string name="cake_servings">Servings : </string>
+    <string name="msg_loading_error">Sorry try later</string>
+
+</resources>
