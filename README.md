@@ -18,3 +18,4 @@ Baking Application for making delicious recipes.
 * Dagger2.
 * rxJava.
 * OkHttp.
+* Room DB
