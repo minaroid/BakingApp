@@ -65,4 +65,8 @@ dependencies {
     compile 'io.reactivex:rxandroid:'+ rootProject.librariesVersions.rxandroidLibraryVersion
     compile 'io.reactivex:rxjava:'+ rootProject.librariesVersions.rxjavaLibraryVersion
     compile 'com.squareup.retrofit2:adapter-rxjava:'+ rootProject.librariesVersions.adapterRxjavaLibraryVersion
+
+    //Room DB
+    implementation "android.arch.persistence.room:runtime:"+ rootProject.librariesVersions.roomLibraryVersion
+    annotationProcessor "android.arch.persistence.room:compiler:"+ rootProject.librariesVersions.roomCompilerLibraryVersion
 }

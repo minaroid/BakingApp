@@ -42,7 +42,7 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.CakeViewHolder
     public void onBindViewHolder(@NonNull CakeViewHolder holder, int position) {
       Cake c = cakes.get(position);
       holder.cakeTitle.setText(c.getName());
-      holder.cakeServing.setText( context.getString(R.string.cake_servings)+ c.getServings() );
+      holder.cakeServing.setText( context.getString(R.string.cake_servings)+"  "+ c.getServings() );
 
       if (!c.getImage().equals("")) {
           Glide.with(context)

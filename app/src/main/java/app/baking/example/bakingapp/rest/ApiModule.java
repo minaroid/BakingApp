@@ -12,16 +12,13 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class ApiModule {
 
 
-    public final String BASE_URL = "https://d17h27t6h515a5.cloudfront.net/";
+    private static final String BASE_URL = "https://d17h27t6h515a5.cloudfront.net/";
 
     @Provides
     public OkHttpClient provideClient() {
-
         HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
         interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
-
         return new OkHttpClient.Builder().addInterceptor(interceptor).build();
-
     }
 
     @Provides

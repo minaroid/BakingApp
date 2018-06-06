@@ -3,6 +3,7 @@ package app.baking.example.bakingapp.ui.fragments.homeFragment;
 import java.util.ArrayList;
 
 import app.baking.example.bakingapp.models.Cake;
+import rx.Observable;
 
 public interface HomeFragmentMVP {
 
@@ -17,11 +18,12 @@ public interface HomeFragmentMVP {
 
         void loadData();
         void setView(HomeFragmentMVP.View v);
+        void rxUnsubscribe();
 
     }
 
     interface Model {
 
-
+        Observable<Cake> results();
     }
 }

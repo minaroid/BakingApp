@@ -64,7 +64,11 @@ ext {
 
             rxjavaLibraryVersion      : '1.2.6',
 
-            adapterRxjavaLibraryVersion:  '2.1.0'
+            adapterRxjavaLibraryVersion:  '2.1.0',
+
+            roomLibraryVersion         : '1.1.0',
+
+            roomCompilerLibraryVersion : '1.1.0'
     ]
 
 

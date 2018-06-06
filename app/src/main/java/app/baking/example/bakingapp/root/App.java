@@ -22,6 +22,7 @@ public class App extends Application {
     }
 
     public ApplicationComponent getComponent() {
+
         return component;
     }
 }

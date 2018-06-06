@@ -2,6 +2,7 @@
 package app.baking.example.bakingapp.models;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Cake implements Serializable
@@ -9,8 +10,8 @@ public class Cake implements Serializable
 
     private Integer id;
     private String name;
-    private List<Ingredient> ingredients = null;
-    private List<Step> steps = null;
+    private ArrayList<Ingredient> ingredients = null;
+    private ArrayList<Step> steps = null;
     private Integer servings;
     private String image;
     private final static long serialVersionUID = 6467816979223040844L;
@@ -31,19 +32,19 @@ public class Cake implements Serializable
         this.name = name;
     }
 
-    public List<Ingredient> getIngredients() {
+    public ArrayList<Ingredient> getIngredients() {
         return ingredients;
     }
 
-    public void setIngredients(List<Ingredient> ingredients) {
+    public void setIngredients(ArrayList<Ingredient> ingredients) {
         this.ingredients = ingredients;
     }
 
-    public List<Step> getSteps() {
+    public ArrayList<Step> getSteps() {
         return steps;
     }
 
-    public void setSteps(List<Step> steps) {
+    public void setSteps(ArrayList<Step> steps) {
         this.steps = steps;
     }
 

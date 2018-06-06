@@ -13,13 +13,12 @@ import dagger.Provides;
 @Module
 public class HomeFragmentModule {
 
-    @Inject
-    BakingAPI api;
-
-
 
     @Provides
     public HomeFragmentMVP.Presenter provideLoginActivityPresenter(BakingAPI api ) {
         return new HomeFragmentPresenter(api);
     }
+
+
+
 }

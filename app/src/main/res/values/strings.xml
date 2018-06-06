@@ -3,5 +3,8 @@
     <string name="cake_name">Cake Title</string>
     <string name="cake_servings">Servings : </string>
     <string name="msg_loading_error">Sorry try later</string>
-
+    <string name="ingredient">Ingredient</string>
+    <string name="quantity">quantity</string>
+    <string name="steps">Steps</string>
+    <string name="des">descr</string>
 </resources>
