@@ -8,13 +8,13 @@ Baking Application for making delicious recipes.
 * Supports Multi-Screen sizes.
 
 #Libraries:
-*Android Support Libraries.
-*Espresso Test Library.
-*ButterKnife.
-*Glide.
-*Retrofit.
-*Gson
-*ExoPlayer.
-*Dagger2.
-*rxJava.
-*OkHttp.
+* Android Support Libraries.
+* Espresso Test Library.
+* ButterKnife.
+* Glide.
+* Retrofit.
+* Gson
+* ExoPlayer.
+* Dagger2.
+* rxJava.
+* OkHttp.
