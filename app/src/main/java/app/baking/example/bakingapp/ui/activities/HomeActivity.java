@@ -6,6 +6,7 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.widget.Toast;
 
 import app.baking.example.bakingapp.R;
 import app.baking.example.bakingapp.root.App;
@@ -26,7 +27,9 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
         ButterKnife.bind(this);
         setSupportActionBar(toolbar);
-
+        if(findViewById(R.id.two_pane_view)!=null){
+            ((App)getApplicationContext()).setTwoPane(true);
+        }
         fm = getSupportFragmentManager();
         FragmentTransaction ft = fm.beginTransaction();
         ft.addToBackStack(HomeFragmentTAG);
@@ -43,4 +46,5 @@ public class HomeActivity extends AppCompatActivity {
             super.onBackPressed();
         }
     }
+
 }

@@ -22,6 +22,7 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
     // test library
+    implementation 'com.android.support.constraint:constraint-layout:1.1.1'
     androidTestImplementation 'com.android.support.test:runner:' + rootProject.librariesVersions.runnerVersion
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:' + rootProject.librariesVersions.espressoTestLibraryVersion
     androidTestImplementation 'com.android.support.test.espresso:espresso-contrib:' + rootProject.librariesVersions.espressoTestLibraryVersion
@@ -58,15 +59,15 @@ dependencies {
     implementation 'com.github.bumptech.glide:glide:' + rootProject.librariesVersions.glideLibraryVersion
 
     //injection
-    implementation 'com.google.dagger:dagger:'+ rootProject.librariesVersions.daggerLibraryVersion
-    annotationProcessor 'com.google.dagger:dagger-compiler:'+ rootProject.librariesVersions.daggerLibraryVersion
+    implementation 'com.google.dagger:dagger:' + rootProject.librariesVersions.daggerLibraryVersion
+    annotationProcessor 'com.google.dagger:dagger-compiler:' + rootProject.librariesVersions.daggerLibraryVersion
 
     //RxJava
-    compile 'io.reactivex:rxandroid:'+ rootProject.librariesVersions.rxandroidLibraryVersion
-    compile 'io.reactivex:rxjava:'+ rootProject.librariesVersions.rxjavaLibraryVersion
-    compile 'com.squareup.retrofit2:adapter-rxjava:'+ rootProject.librariesVersions.adapterRxjavaLibraryVersion
+    compile 'io.reactivex:rxandroid:' + rootProject.librariesVersions.rxandroidLibraryVersion
+    compile 'io.reactivex:rxjava:' + rootProject.librariesVersions.rxjavaLibraryVersion
+    compile 'com.squareup.retrofit2:adapter-rxjava:' + rootProject.librariesVersions.adapterRxjavaLibraryVersion
 
     //Room DB
-    implementation "android.arch.persistence.room:runtime:"+ rootProject.librariesVersions.roomLibraryVersion
-    annotationProcessor "android.arch.persistence.room:compiler:"+ rootProject.librariesVersions.roomCompilerLibraryVersion
+    implementation "android.arch.persistence.room:runtime:" + rootProject.librariesVersions.roomLibraryVersion
+    annotationProcessor "android.arch.persistence.room:compiler:" + rootProject.librariesVersions.roomCompilerLibraryVersion
 }

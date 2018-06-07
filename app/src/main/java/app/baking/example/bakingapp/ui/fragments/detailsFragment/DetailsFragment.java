@@ -9,6 +9,8 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
+
 import app.baking.example.bakingapp.R;
 import app.baking.example.bakingapp.models.Cake;
 import app.baking.example.bakingapp.ui.activities.HomeActivity;
@@ -16,7 +18,7 @@ import app.baking.example.bakingapp.ui.adapters.DetailsAdapter;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class DetailsFragment extends Fragment {
+public class DetailsFragment extends Fragment implements TwoPaneListener{
     @BindView(R.id.recycler_details)
     RecyclerView recyclerView;
 
@@ -43,9 +45,8 @@ public class DetailsFragment extends Fragment {
         Cake cake = (Cake) getArguments().getSerializable("item");
         ((HomeActivity)getContext()).getSupportActionBar().setTitle(cake.getName());
         ((HomeActivity)getContext()).getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        adapter = new DetailsAdapter(cake);
+        adapter = new DetailsAdapter(cake,this);
         recyclerView.setAdapter(adapter);
-
     }
 
     @Override
@@ -60,4 +61,8 @@ public class DetailsFragment extends Fragment {
         return super.onOptionsItemSelected(item);
     }
 
+    @Override
+    public void setVideoUrl(String url) {
+        Toast.makeText(getActivity(),url,Toast.LENGTH_SHORT).show();
+    }
 }

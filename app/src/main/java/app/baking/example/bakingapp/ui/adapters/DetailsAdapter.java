@@ -1,6 +1,8 @@
 package app.baking.example.bakingapp.ui.adapters;
 
+import android.content.Context;
 import android.support.annotation.NonNull;
+import android.support.v4.app.Fragment;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,11 +19,13 @@ public class DetailsAdapter extends RecyclerView.Adapter{
 
    private ArrayList<String> types = new ArrayList<>();
    private Cake cake ;
+   private Fragment fragment;
 
-    public DetailsAdapter(Cake c ){
+    public DetailsAdapter(Cake c , Fragment f){
         this.types.add("Ingredients");
         this.types.add("Steps");
         this.cake = c;
+        this.fragment =f;
 
     }
 
@@ -56,7 +60,7 @@ public class DetailsAdapter extends RecyclerView.Adapter{
 
             case "Steps":
                 RecyclerView re2 = ((StepsViewHolder) holder).steps_recycler_view;
-                re2.setAdapter(new StepsAdapter(cake));
+                re2.setAdapter(new StepsAdapter(cake,fragment));
                 break;
         }
     }

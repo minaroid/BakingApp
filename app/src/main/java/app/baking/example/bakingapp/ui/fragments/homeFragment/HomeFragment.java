@@ -5,7 +5,10 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.DisplayMetrics;
+import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -34,6 +37,8 @@ public class HomeFragment extends Fragment implements HomeFragmentMVP.View{
         super.onCreate(savedInstanceState);
         ((App) getActivity().getApplication()).getComponent().injectHomeFragment(this);
         adapter = new HomeAdapter(getContext(),this);
+        presenter.setView(this);
+        presenter.loadData();
     }
 
     @Nullable
@@ -48,14 +53,10 @@ public class HomeFragment extends Fragment implements HomeFragmentMVP.View{
         ButterKnife.bind(this,view);
         ((HomeActivity)getContext()).getSupportActionBar().setTitle(R.string.app_name);
         ((HomeActivity)getContext()).getSupportActionBar().setDisplayHomeAsUpEnabled(false);
+        if(((App)getActivity().getApplicationContext()).isTwoPane()){
+            recyclerView.setLayoutManager(layoutManager());
+        }
         recyclerView.setAdapter(adapter);
-    }
-
-    @Override
-    public void onResume() {
-        super.onResume();
-        presenter.setView(this);
-        presenter.loadData();
     }
 
 
@@ -90,5 +91,16 @@ public class HomeFragment extends Fragment implements HomeFragmentMVP.View{
     @Override
     public void notifyAdapter(ArrayList<Cake> cakes) {
         adapter.swapData(cakes);
+    }
+
+    public GridLayoutManager layoutManager(){
+        Display display = getActivity().getWindowManager().getDefaultDisplay();
+        DisplayMetrics outMetrics = new DisplayMetrics();
+        display.getMetrics(outMetrics);
+
+        float density  = getResources().getDisplayMetrics().density;
+        float dpWidth  = outMetrics.widthPixels / density;
+        int columns = Math.round(dpWidth/300);
+         return new GridLayoutManager(getActivity(),columns);
     }
 }
