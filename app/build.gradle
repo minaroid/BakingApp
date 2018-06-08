@@ -46,7 +46,7 @@ dependencies {
     implementation 'com.squareup.retrofit2:converter-gson:' + rootProject.librariesVersions.retrofitLibraryVersion
 
     //http logging
-    compile 'com.squareup.okhttp3:logging-interceptor:' + rootProject.librariesVersions.okhttpLibraryVersion
+    implementation 'com.squareup.okhttp3:logging-interceptor:' + rootProject.librariesVersions.okhttpLibraryVersion
 
     // the Exo player video
     implementation 'com.google.android.exoplayer:exoplayer:' + rootProject.librariesVersions.exoPlayerVersion
@@ -63,9 +63,9 @@ dependencies {
     annotationProcessor 'com.google.dagger:dagger-compiler:' + rootProject.librariesVersions.daggerLibraryVersion
 
     //RxJava
-    compile 'io.reactivex:rxandroid:' + rootProject.librariesVersions.rxandroidLibraryVersion
-    compile 'io.reactivex:rxjava:' + rootProject.librariesVersions.rxjavaLibraryVersion
-    compile 'com.squareup.retrofit2:adapter-rxjava:' + rootProject.librariesVersions.adapterRxjavaLibraryVersion
+    implementation 'io.reactivex:rxandroid:' + rootProject.librariesVersions.rxandroidLibraryVersion
+    implementation 'io.reactivex:rxjava:' + rootProject.librariesVersions.rxjavaLibraryVersion
+    implementation 'com.squareup.retrofit2:adapter-rxjava:' + rootProject.librariesVersions.adapterRxjavaLibraryVersion
 
     //Room DB
     implementation "android.arch.persistence.room:runtime:" + rootProject.librariesVersions.roomLibraryVersion
