@@ -6,7 +6,6 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -15,8 +14,8 @@ import android.widget.Toast;
 
 import app.baking.example.bakingapp.R;
 import app.baking.example.bakingapp.models.Cake;
-import app.baking.example.bakingapp.ui.activities.HomeActivity;
-import app.baking.example.bakingapp.ui.activities.RecipeActivity;
+import app.baking.example.bakingapp.ui.activities.homeActivity.HomeActivity;
+import app.baking.example.bakingapp.ui.activities.recipeActivity.RecipeActivity;
 import app.baking.example.bakingapp.ui.adapters.DetailsAdapter;
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -65,7 +64,7 @@ public class DetailsFragment extends Fragment implements
     }
 
     @Override
-    public void setVideoUrl(String url) {
+    public void setVideoPane(String url,String des) {
         Toast.makeText(getActivity(),url,Toast.LENGTH_SHORT).show();
     }
 

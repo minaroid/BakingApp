@@ -13,7 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".ui.activities.HomeActivity"
+            android:name=".ui.activities.homeActivity.HomeActivity"
             android:launchMode="singleTop">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -26,8 +26,8 @@
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
 
-        <activity android:name=".ui.activities.RecipeActivity"
-            android:parentActivityName=".ui.activities.HomeActivity"></activity>
+        <activity android:name=".ui.activities.recipeActivity.RecipeActivity"
+            android:parentActivityName=".ui.activities.homeActivity.HomeActivity"></activity>
     </application>
 
 </manifest>

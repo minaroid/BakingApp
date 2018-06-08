@@ -1,4 +1,4 @@
-package app.baking.example.bakingapp.ui.activities;
+package app.baking.example.bakingapp.ui.activities.recipeActivity;
 
 import android.content.Intent;
 import android.support.v4.app.FragmentManager;
@@ -31,8 +31,13 @@ public class RecipeActivity extends AppCompatActivity {
 
         fm = getSupportFragmentManager();
         FragmentTransaction ft = fm.beginTransaction();
+        RecipeFragment recipeFragment = new RecipeFragment();
+        Bundle b =new Bundle();
+        b.putString("des",intent.getStringExtra("shortDes"));
+        b.putString("vUrl",intent.getStringExtra("vUrl"));
+        recipeFragment.setArguments(b);
         ft.addToBackStack(RecipeFragment.class.getSimpleName());
-        ft.replace(R.id.rec_container,new RecipeFragment(),RecipeFragment.class.getSimpleName())
+        ft.replace(R.id.rec_container,recipeFragment,RecipeFragment.class.getSimpleName())
                 .commit();
     }
 

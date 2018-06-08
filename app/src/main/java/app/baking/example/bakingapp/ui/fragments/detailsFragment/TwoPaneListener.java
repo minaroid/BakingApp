@@ -2,5 +2,5 @@ package app.baking.example.bakingapp.ui.fragments.detailsFragment;
 
 public interface TwoPaneListener {
 
-    void  setVideoUrl(String url);
+    void setVideoPane(String url,String des);
 }

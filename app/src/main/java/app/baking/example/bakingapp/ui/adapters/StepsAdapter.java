@@ -86,7 +86,8 @@ public class StepsAdapter extends RecyclerView.Adapter<StepsAdapter.MyViewHolder
         public void onClick(View v) {
             int pos = (int) v.getTag();
             if(((App)fragment.getContext().getApplicationContext()).isTwoPane()){
-                paneListener.setVideoUrl("dxdfsd");
+                paneListener.setVideoPane(cake.getSteps().get(pos).getVideoURL(),
+                        cake.getSteps().get(pos).getDescription());
             }else{
                 if(cake.getSteps().get(pos).getVideoURL().equals("")){
                   view.showMessage(fragment.getActivity().getString(R.string.msg_video_not_available));

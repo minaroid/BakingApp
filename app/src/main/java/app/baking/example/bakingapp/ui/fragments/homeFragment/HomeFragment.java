@@ -1,18 +1,12 @@
 package app.baking.example.bakingapp.ui.fragments.homeFragment;
 
-import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
-import android.os.Parcelable;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.DisplayMetrics;
-import android.util.Log;
 import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -23,9 +17,8 @@ import javax.inject.Inject;
 import app.baking.example.bakingapp.R;
 import app.baking.example.bakingapp.models.Cake;
 import app.baking.example.bakingapp.root.App;
-import app.baking.example.bakingapp.ui.activities.HomeActivity;
+import app.baking.example.bakingapp.ui.activities.homeActivity.HomeActivity;
 import app.baking.example.bakingapp.ui.adapters.HomeAdapter;
-import app.baking.example.bakingapp.ui.fragments.detailsFragment.DetailsFragment;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
