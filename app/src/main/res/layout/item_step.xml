@@ -17,11 +17,17 @@
         android:fontFamily="@font/montserrat"
         android:text="@string/des" />
 
-        <TextView
-            android:id="@+id/tv_des"
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
-            android:fontFamily="@font/nunito_sans_light_italic" />
+    <TextView
+        android:id="@+id/tv_des"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:fontFamily="@font/nunito_sans_light_italic" />
+    <ImageView
+        android:id="@+id/image_step"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_margin="3dp"
+        android:layout_gravity="center"/>
 
 
 </LinearLayout>

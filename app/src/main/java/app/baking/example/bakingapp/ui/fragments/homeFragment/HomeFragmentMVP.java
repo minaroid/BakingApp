@@ -9,7 +9,7 @@ public interface HomeFragmentMVP {
 
     interface View {
 
-        void openDetailsFragment(Cake c);
+//        void openDetailsFragment(Cake c);
         void showMessage(int msg);
         void notifyAdapter(ArrayList<Cake> cakes);
     }
@@ -18,6 +18,7 @@ public interface HomeFragmentMVP {
 
         void loadData();
         void setView(HomeFragmentMVP.View v);
+        HomeFragmentMVP.View getView();
         void rxUnsubscribe();
 
     }

@@ -11,23 +11,25 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 import app.baking.example.bakingapp.R;
 import app.baking.example.bakingapp.models.Cake;
+import app.baking.example.bakingapp.ui.activities.homeActivity.HomeActivityMVP;
 import app.baking.example.bakingapp.ui.fragments.homeFragment.HomeFragmentMVP;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.CakeViewHolder>{
+public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.CakeViewHolder>
+implements Serializable {
 
     private ArrayList<Cake> cakes = new ArrayList<>();
     private Context context ;
-    private HomeFragmentMVP.View fragmentView ;
-
-    public HomeAdapter(Context c , HomeFragmentMVP.View v){
+    private HomeActivityMVP.View activityView ;
+    public HomeAdapter(Context c ){
         this.context = c;
-        this.fragmentView = v;
+        this.activityView = (HomeActivityMVP.View) c ;
     }
 
 
@@ -84,7 +86,7 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.CakeViewHolder
 
         @Override
         public void onClick(View v) {
-            fragmentView.openDetailsFragment(cakes.get((int) v.getTag()));
+            activityView.openDetailsFragment(cakes.get((int) v.getTag()));
         }
     }
 }

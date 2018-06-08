@@ -1,10 +1,12 @@
 package app.baking.example.bakingapp.ui.fragments.detailsFragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -14,11 +16,13 @@ import android.widget.Toast;
 import app.baking.example.bakingapp.R;
 import app.baking.example.bakingapp.models.Cake;
 import app.baking.example.bakingapp.ui.activities.HomeActivity;
+import app.baking.example.bakingapp.ui.activities.RecipeActivity;
 import app.baking.example.bakingapp.ui.adapters.DetailsAdapter;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class DetailsFragment extends Fragment implements TwoPaneListener{
+public class DetailsFragment extends Fragment implements
+        TwoPaneListener , DetailsFragmentMVP.view{
     @BindView(R.id.recycler_details)
     RecyclerView recyclerView;
 
@@ -34,8 +38,7 @@ public class DetailsFragment extends Fragment implements TwoPaneListener{
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.fragment_details, container, false);
-        return v;
+        return inflater.inflate(R.layout.fragment_details, container, false);
     }
 
     @Override
@@ -65,4 +68,20 @@ public class DetailsFragment extends Fragment implements TwoPaneListener{
     public void setVideoUrl(String url) {
         Toast.makeText(getActivity(),url,Toast.LENGTH_SHORT).show();
     }
+
+    @Override
+    public void openRecipeActivity(String shortDes, String des, String vUrl) {
+
+        Intent i = new Intent(getActivity(), RecipeActivity.class);
+        i.putExtra("shortDes",shortDes);
+        i.putExtra("des",des);
+        i.putExtra("vUrl",vUrl);
+        startActivity(i);
+    }
+
+    @Override
+    public void showMessage(String msg) {
+        Toast.makeText(getActivity(),msg,Toast.LENGTH_SHORT).show();
+    }
+
 }

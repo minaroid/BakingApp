@@ -7,4 +7,5 @@
     <string name="quantity">quantity</string>
     <string name="steps">Steps</string>
     <string name="des">descr</string>
+    <string name="msg_video_not_available">Sorry Video Not Available</string>
 </resources>

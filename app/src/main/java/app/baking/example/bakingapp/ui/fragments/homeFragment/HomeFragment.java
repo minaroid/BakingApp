@@ -1,13 +1,18 @@
 package app.baking.example.bakingapp.ui.fragments.homeFragment;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -26,17 +31,18 @@ import butterknife.ButterKnife;
 
 public class HomeFragment extends Fragment implements HomeFragmentMVP.View{
 
-    private HomeAdapter adapter ;
+
     @BindView(R.id.recycler_home)
     RecyclerView recyclerView;
     @Inject
     HomeFragmentMVP.Presenter presenter;
 
+    private HomeAdapter adapter ;
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         ((App) getActivity().getApplication()).getComponent().injectHomeFragment(this);
-        adapter = new HomeAdapter(getContext(),this);
+        adapter = new HomeAdapter(getActivity());
         presenter.setView(this);
         presenter.loadData();
     }
@@ -51,31 +57,19 @@ public class HomeFragment extends Fragment implements HomeFragmentMVP.View{
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         ButterKnife.bind(this,view);
-        ((HomeActivity)getContext()).getSupportActionBar().setTitle(R.string.app_name);
-        ((HomeActivity)getContext()).getSupportActionBar().setDisplayHomeAsUpEnabled(false);
+        ((HomeActivity)getActivity()).getSupportActionBar().setTitle(R.string.app_name);
+        ((HomeActivity)getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(false);
         if(((App)getActivity().getApplicationContext()).isTwoPane()){
             recyclerView.setLayoutManager(layoutManager());
         }
         recyclerView.setAdapter(adapter);
     }
 
-
     @Override
     public void onDestroy() {
         super.onDestroy();
-        presenter.rxUnsubscribe();
-    }
-
-    @Override
-    public void openDetailsFragment(Cake c) {
-        DetailsFragment fragment = new DetailsFragment();
-        Bundle b = new Bundle();
-        b.putSerializable("item",c);
-        fragment.setArguments(b);
-        FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
-        ft.addToBackStack(DetailsFragment.class.getSimpleName());
-        ft.replace(R.id.fragment_container,fragment,DetailsFragment.class.getSimpleName())
-                .commit();
+        if (presenter.getView() != null){
+        presenter.rxUnsubscribe();}
     }
 
     @Override
@@ -103,4 +97,6 @@ public class HomeFragment extends Fragment implements HomeFragmentMVP.View{
         int columns = Math.round(dpWidth/300);
          return new GridLayoutManager(getActivity(),columns);
     }
+
+
 }

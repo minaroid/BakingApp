@@ -54,4 +54,8 @@ public class HomeFragmentPresenter implements HomeFragmentMVP.Presenter {
            }
        }
     }
+    @Override
+    public HomeFragmentMVP.View getView() {
+        return view;
+    }
 }

@@ -1,12 +1,14 @@
 
 package app.baking.example.bakingapp.models;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Cake implements Serializable
-{
+public class Cake implements Serializable, Parcelable {
 
     private Integer id;
     private String name;
@@ -64,4 +66,13 @@ public class Cake implements Serializable
         this.image = image;
     }
 
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+
+    }
 }
