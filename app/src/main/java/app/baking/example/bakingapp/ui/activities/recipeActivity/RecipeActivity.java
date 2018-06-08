@@ -6,9 +6,7 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-
 import app.baking.example.bakingapp.R;
-import app.baking.example.bakingapp.ui.fragments.homeFragment.HomeFragment;
 import app.baking.example.bakingapp.ui.fragments.recipeFragmnet.RecipeFragment;
 import butterknife.BindView;
 import butterknife.ButterKnife;
