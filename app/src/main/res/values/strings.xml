@@ -8,4 +8,8 @@
     <string name="steps">Steps</string>
     <string name="des">descr</string>
     <string name="msg_video_not_available">Sorry Video Not Available</string>
+    <string name="share_fab_label">Share</string>
+    <string name="add_to_widget_fab_label">Add Ingredients to Widget</string>
+    <string name="options_fab_label">Options</string>
+
 </resources>

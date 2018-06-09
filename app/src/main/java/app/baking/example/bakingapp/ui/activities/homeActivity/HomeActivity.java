@@ -2,6 +2,7 @@ package app.baking.example.bakingapp.ui.activities.homeActivity;
 
 
 
+import android.content.Intent;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -12,6 +13,7 @@ import android.support.v7.widget.Toolbar;
 import app.baking.example.bakingapp.R;
 import app.baking.example.bakingapp.models.Cake;
 import app.baking.example.bakingapp.root.App;
+import app.baking.example.bakingapp.ui.activities.recipeActivity.RecipeActivity;
 import app.baking.example.bakingapp.ui.fragments.detailsFragment.DetailsFragment;
 import app.baking.example.bakingapp.ui.fragments.homeFragment.HomeFragment;
 import butterknife.BindView;
@@ -21,9 +23,11 @@ public class HomeActivity extends AppCompatActivity implements HomeActivityMVP.V
 
     @BindView(R.id.toolbar_id)
     Toolbar toolbar;
+
     private static final String homeFragmentTAG= HomeFragment.class.getSimpleName();
     private static final String detailsFragmentTAG= DetailsFragment.class.getSimpleName();
     private FragmentManager fm;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -72,16 +76,6 @@ public class HomeActivity extends AppCompatActivity implements HomeActivityMVP.V
     }
 
     @Override
-    public void onBackPressed() {
-        if (fm.findFragmentByTag(homeFragmentTAG).isAdded()) {
-            finish();
-        } else {
-            super.onBackPressed();
-        }
-    }
-
-
-    @Override
     public void openDetailsFragment(Cake c) {
 
         DetailsFragment fragment = new DetailsFragment();
@@ -94,4 +88,24 @@ public class HomeActivity extends AppCompatActivity implements HomeActivityMVP.V
                 .commit();
 
     }
+
+    @Override
+    public void openRecipeActivity(String shortDes, String des, String vUrl) {
+
+        Intent i = new Intent(this, RecipeActivity.class);
+        i.putExtra("shortDes",shortDes);
+        i.putExtra("des",des);
+        i.putExtra("vUrl",vUrl);
+        startActivity(i);
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (fm.findFragmentByTag(homeFragmentTAG).isAdded()) {
+            finish();
+        } else {
+            super.onBackPressed();
+        }
+    }
+
 }

@@ -15,23 +15,26 @@ import android.widget.Toast;
 import app.baking.example.bakingapp.R;
 import app.baking.example.bakingapp.models.Cake;
 import app.baking.example.bakingapp.ui.activities.homeActivity.HomeActivity;
+import app.baking.example.bakingapp.ui.activities.homeActivity.HomeActivityMVP;
 import app.baking.example.bakingapp.ui.activities.recipeActivity.RecipeActivity;
 import app.baking.example.bakingapp.ui.adapters.DetailsAdapter;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class DetailsFragment extends Fragment implements
-        TwoPaneListener , DetailsFragmentMVP.view{
+        TwoPaneListener , DetailsFragmentMVP.view {
     @BindView(R.id.recycler_details)
     RecyclerView recyclerView;
 
     private DetailsAdapter adapter;
+    private HomeActivityMVP.View homeActivityView;
 
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setHasOptionsMenu(true);
+        this.homeActivityView =(HomeActivityMVP.View) getActivity();
     }
 
     @Nullable
@@ -65,17 +68,15 @@ public class DetailsFragment extends Fragment implements
 
     @Override
     public void setVideoPane(String url,String des) {
+
         Toast.makeText(getActivity(),url,Toast.LENGTH_SHORT).show();
+
     }
 
     @Override
     public void openRecipeActivity(String shortDes, String des, String vUrl) {
 
-        Intent i = new Intent(getActivity(), RecipeActivity.class);
-        i.putExtra("shortDes",shortDes);
-        i.putExtra("des",des);
-        i.putExtra("vUrl",vUrl);
-        startActivity(i);
+        homeActivityView.openRecipeActivity(shortDes,des,vUrl);
     }
 
     @Override

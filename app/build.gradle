@@ -70,4 +70,7 @@ dependencies {
     //Room DB
     implementation "android.arch.persistence.room:runtime:" + rootProject.librariesVersions.roomLibraryVersion
     annotationProcessor "android.arch.persistence.room:compiler:" + rootProject.librariesVersions.roomCompilerLibraryVersion
+
+    // floating action buttons menu library
+    implementation 'com.github.clans:fab:' + rootProject.librariesVersions.fabMenuClansVersion
 }

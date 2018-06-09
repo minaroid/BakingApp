@@ -31,7 +31,7 @@ public class RecipeActivity extends AppCompatActivity {
         FragmentTransaction ft = fm.beginTransaction();
         RecipeFragment recipeFragment = new RecipeFragment();
         Bundle b =new Bundle();
-        b.putString("des",intent.getStringExtra("shortDes"));
+        b.putString("des",intent.getStringExtra("des"));
         b.putString("vUrl",intent.getStringExtra("vUrl"));
         recipeFragment.setArguments(b);
         ft.addToBackStack(RecipeFragment.class.getSimpleName());
